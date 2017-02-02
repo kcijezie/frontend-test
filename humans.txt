@@ -1,9 +1,9 @@
 /* TEAM */
-	UI developer: Your Name
-	Contact: you [at] yourdomain.org
-	Twitter: @???
-	LinkedIn: https://uk.linkedin.com/in/your-id-here
-	From: Your Country / Location
+	UI developer: Kene Ijezie
+	Contact: kcijezie [at] gmail.com
+	Twitter: @kcijezie
+	LinkedIn: https://uk.linkedin.com/in/kcijezie
+	From: UK / Oxfordshire
 
 /**
  * Please leave us your contact details here so we can be sure we can get back in touch.
