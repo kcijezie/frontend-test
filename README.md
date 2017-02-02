@@ -15,7 +15,10 @@ Built using react components with CSS-in-JS for scalability, portability, extens
 * Enter project directory `cd src`
 * Run `npm install` to install JS libraries in src/package.json
 * Run `gulp` to build app from src/
+
+
 ![Run project build process](/ProjectScreenShots/gulp-build.PNG?raw=true "Run project build process")
+
 
 ## Project layout
 
