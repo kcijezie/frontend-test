@@ -1,3 +1,45 @@
+Basement UI built using ReactJS, ExpressJS, and NodeJS v4.4.2
+===
+
+Built using react components with CSS-in-JS for scalability, portability, extensibility.
+
+## Getting started
+
+1. Clone repository `https://github.com/kcijezie/frontend-test.git`
+2. Enter project directory `cd frontend-test`
+3. Install dependencies `npm i` or `npm install`
+4. Run `node server` - start production server, try it by opening `http://localhost:3000/`
+
+# Tests - None were written for now
+
+## Project build process
+
+* Enter project directory `cd src`
+* Run `npm install` to install JS libraries in src/package.json
+* Run `gulp` to build app from src/
+
+## Project structure
+
+src/app/
+??? components/
+?   ??? carousel
+?   ??? content-push
+?   ??? footer
+?   ??? header
+?   ??? introduction
+?   ??? main-container
+??? css/
+?   ??? style.css
+??? images/
+    ??? Basement_Logo.png
+    ??? Basement_Logo_Small.png
+    ??? Dribble_Icon.png
+    ??? Faceboot_Icon.png
+    ??? Twitter_Icon.png
+
+![Project structure](/ProjectScreenShots/structure.gif?raw=true "Project Structure")
+
+
 Introduction
 ===
 

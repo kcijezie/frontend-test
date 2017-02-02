@@ -47,7 +47,8 @@ function map_error(err) {
 
     this.emit('end');
 }
-/* */
+
+// Watch for files changes and browserify
 
 gulp.task('watchify', function () {
     var args = merge(watchify.args, { debug: true })
@@ -59,26 +60,28 @@ gulp.task('watchify', function () {
     })
 })
 
+// Function for bundling, minifying
 function bundle_js(bundler) {
     return bundler.bundle()
         .on('error', map_error)
         .pipe(source('./app/index.js'))
         .pipe(buffer())
-        .pipe(gulp.dest('.././dist2'))
+        .pipe(gulp.dest('.././dist'))
         .pipe(rename('app.min.js'))
         .pipe(sourcemaps.init({ loadMaps: true }))
         // capture sourcemaps from transforms
         .pipe(uglify())
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('.././dist2'))
+        .pipe(gulp.dest('.././dist'))
 }
 
-// Without watchify
+// browserify without watchify
 gulp.task('browserify', function () {
     var bundler = browserify('./app/index.js', { debug: true }).transform(babelify, {presets: ['es2015', 'react']})
     return bundle_js(bundler)
 })
 
+// htmlreplace index.html with assets
 gulp.task('html', function() {
     return gulp.src('./app/index.html')
         .pipe(htmlreplace({
@@ -90,7 +93,7 @@ gulp.task('html', function() {
 });
 
 
-// Without sourcemaps
+// browserify without sourcemaps
 gulp.task('browserify-production', function () {
     var bundler = browserify('./app/index.js').transform(babelify, {presets: ['es2015', 'react']})
 
@@ -103,6 +106,7 @@ gulp.task('browserify-production', function () {
         .pipe(gulp.dest('.././dist'))
 });
 
+// Minify all CSS
 gulp.task('css', function () {
     var appCss = gulp.src('./app/css/*.css'),
         bootstrapCss = gulp.src('./node_modules/bootstrap/dist/css/bootstrap.css')
@@ -113,11 +117,13 @@ gulp.task('css', function () {
         .pipe(gulp.dest('.././dist'));
 });
 
+// Get images into dist folder from src folder
 gulp.task('png-images', function() {
     gulp.src('./app/images/*.png')
         .pipe(gulp.dest('.././dist/images'));
 });
 
+// Get JQuery and Bootstrap.js into dist folder as vendors.min.js
 gulp.task('vendor-js', function() {
     return gulp.src(['./node_modules/jquery/dist/jquery.js', './node_modules/bootstrap/dist/js/bootstrap.js'])
         .pipe(concat('vendors.min.js'))
@@ -125,6 +131,7 @@ gulp.task('vendor-js', function() {
         .pipe(gulp.dest('.././dist'));
 });
 
+// Run gulp tasks
 gulp.task('default', ['html', 'css', 'png-images', 'vendor-js', 'browserify-production'], function(callback) {
     callback();
     console.log('\nPlaced optimized files in ' + chalk.magenta('dist/\n'));
