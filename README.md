@@ -1,4 +1,4 @@
-Basement UI built using ReactJS, ExpressJS, and NodeJS v4.4.2
+Responsive Basement UI built using ReactJS, ExpressJS, and NodeJS v4.4.2
 ===
 
 Built using react components with CSS-in-JS for scalability, portability, extensibility.
@@ -10,33 +10,18 @@ Built using react components with CSS-in-JS for scalability, portability, extens
 3. Install dependencies `npm i` or `npm install`
 4. Run `node server` - start production server, try it by opening `http://localhost:3000/`
 
-# Tests - None were written for now
-
-## Project build process
+## Run project build process
 
 * Enter project directory `cd src`
 * Run `npm install` to install JS libraries in src/package.json
 * Run `gulp` to build app from src/
+![Run project build process](/ProjectScreenShots/gulp-build.PNG?raw=true "Run project build process")
+
+## Project layout
+
+![Project layout](/ProjectScreenShots/layout.PNG?raw=true "Project layout")
 
 ## Project structure
-
-src/app/
-??? components/
-?   ??? carousel
-?   ??? content-push
-?   ??? footer
-?   ??? header
-?   ??? introduction
-?   ??? main-container
-??? css/
-?   ??? style.css
-??? images/
-    ??? Basement_Logo.png
-    ??? Basement_Logo_Small.png
-    ??? Dribble_Icon.png
-    ??? Faceboot_Icon.png
-    ??? Twitter_Icon.png
-
 ![Project structure](/ProjectScreenShots/structure.gif?raw=true "Project Structure")
 
 

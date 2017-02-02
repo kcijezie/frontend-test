@@ -9,6 +9,7 @@ var ContentPushSection= require('../content-push/');
 var IntroductionSection= require('../introduction/');
 var FooterSection= require('../footer/');
 
+// MainContainer is parent to HeaderBar, CarouselSection, ContentPushSection, IntroductionSection, FooterSection
 var MainContainer = React.createClass({
     render: function() {
         return (
